@@ -25,10 +25,11 @@ public class ShopTypeController {
     @Resource
     private IShopTypeService typeService;
 
+
     @GetMapping("list")
     public Result queryTypeList() {
-        List<ShopType> typeList = typeService
-                .query().orderByAsc("sort").list();
-        return Result.ok(typeList);
+
+        return typeService.queryShopTypeString();
+
     }
 }
